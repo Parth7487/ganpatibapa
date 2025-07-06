@@ -34,47 +34,47 @@ export default defineConfig(({ mode }) => ({
   build: {
     rollupOptions: {
       output: {
-        manualChunks: (id) => {
-          if (id.includes("node_modules")) {
-            if (id.includes("react") || id.includes("react-dom")) {
-              return "react-vendor";
-            }
-            if (id.includes("framer-motion")) {
-              return "framer";
-            }
-            if (id.includes("@radix-ui")) {
-              return "radix-ui";
-            }
-            if (id.includes("lucide-react")) {
-              return "lucide";
-            }
-            if (id.includes("@tabler/icons-react")) {
-              return "tabler";
-            }
-            if (id.includes("react-router")) {
-              return "router";
-            }
-            if (id.includes("three") || id.includes("@react-three")) {
-              return "three-js";
-            }
-            if (id.includes("@tanstack/react-query")) {
-              return "query";
-            }
-            return "vendor";
-          }
-          if (id.includes("src/pages/Work.tsx")) {
-            return "work-page";
-          }
-          if (id.includes("src/pages/")) {
-            return "pages";
-          }
-          if (id.includes("src/components/sections/")) {
-            return "sections";
-          }
-          if (id.includes("src/components/ui/")) {
-            return "ui-components";
-          }
-        },
+        // manualChunks: (id) => {
+        //   if (id.includes("node_modules")) {
+        //     if (id.includes("react") || id.includes("react-dom")) {
+        //       return "react-vendor";
+        //     }
+        //     if (id.includes("framer-motion")) {
+        //       return "framer";
+        //     }
+        //     if (id.includes("@radix-ui")) {
+        //       return "radix-ui";
+        //     }
+        //     if (id.includes("lucide-react")) {
+        //       return "lucide";
+        //     }
+        //     if (id.includes("@tabler/icons-react")) {
+        //       return "tabler";
+        //     }
+        //     if (id.includes("react-router")) {
+        //       return "router";
+        //     }
+        //     if (id.includes("three") || id.includes("@react-three")) {
+        //       return "three-js";
+        //     }
+        //     if (id.includes("@tanstack/react-query")) {
+        //       return "query";
+        //     }
+        //     return "vendor";
+        //   }
+        //   if (id.includes("src/pages/Work.tsx")) {
+        //     return "work-page";
+        //   }
+        //   if (id.includes("src/pages/")) {
+        //     return "pages";
+        //   }
+        //   if (id.includes("src/components/sections/")) {
+        //     return "sections";
+        //   }
+        //   if (id.includes("src/components/ui/")) {
+        //     return "ui-components";
+        //   }
+        // },
         chunkFileNames: (chunkInfo) => {
           const facadeModuleId = chunkInfo.facadeModuleId
             ? chunkInfo.facadeModuleId.split("/").pop()
