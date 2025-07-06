@@ -89,6 +89,7 @@ const DesignPlayground = () => {
             transform: `rotate(${element.rotation}deg)`,
             filter: "blur(0.8px)",
             boxShadow: `0 0 ${parseInt(element.size) * 2}px rgba(230, 177, 126, ${element.opacity * 0.3})`,
+            willChange: "transform, opacity", // Optimize for GPU acceleration
           }}
           animate={{
             y: [0, -15 - index * 1.5, 0],
@@ -105,9 +106,6 @@ const DesignPlayground = () => {
             repeat: Infinity,
             ease: "linear", // Simpler easing for better performance
             delay: index * 0.1,
-          }}
-          style={{
-            willChange: "transform, opacity", // Optimize for GPU acceleration
           }}
         />
       ))}
